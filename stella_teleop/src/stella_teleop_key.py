@@ -32,8 +32,8 @@ from geometry_msgs.msg import Twist
 import sys, select, termios, tty
 
 # 0.471m per revolution
-STELLA_MAX_LIN_VEL = 2 # m/s
-STELLA_MAX_ANG_VEL = 3.14 # rad/s
+STELLA_MAX_LIN_VEL = 1 # m/s
+STELLA_MAX_ANG_VEL = 1.57 # rad/s
 
 
 LIN_VEL_STEP_SIZE = 0.1
