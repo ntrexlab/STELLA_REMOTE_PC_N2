@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # Copyright (c) 2011, Willow Garage, Inc.
 # All rights reserved.
@@ -121,37 +121,37 @@ if __name__=="__main__":
 	control_angular_vel = 0.0
 
 	try:
-		print msg
+		print (msg)
 		while(1):
 			key = get_key()
 			if key == 'w' :
 				target_linear_vel = check_linear_limit_velocity(target_linear_vel + LIN_VEL_STEP_SIZE)
 				status = status + 1
-				print vels(target_linear_vel,target_angular_vel)
+				print (vels(target_linear_vel,target_angular_vel))
 			elif key == 'x' :
 				target_linear_vel = check_linear_limit_velocity(target_linear_vel - LIN_VEL_STEP_SIZE)
 				status = status + 1
-				print vels(target_linear_vel,target_angular_vel)
+				print (vels(target_linear_vel,target_angular_vel))
 			elif key == 'a' :
 				target_angular_vel = check_angular_limit_velocity(target_angular_vel + ANG_VEL_STEP_SIZE)
 				status = status + 1
-				print vels(target_linear_vel,target_angular_vel)
+				print (vels(target_linear_vel,target_angular_vel))
 			elif key == 'd' :
 				target_angular_vel = check_angular_limit_velocity(target_angular_vel - ANG_VEL_STEP_SIZE)
 				status = status + 1
-				print vels(target_linear_vel,target_angular_vel)
+				print (vels(target_linear_vel,target_angular_vel))
 			elif key == ' ' or key == 's' :
 				target_linear_vel   = 0.0
 				control_linear_vel  = 0.0
 				target_angular_vel  = 0.0
 				control_angular_vel = 0.0
-				print vels(target_linear_vel, target_angular_vel)
+				print (vels(target_linear_vel, target_angular_vel))
 			else:
 				if key == '\x03':
 					break
 
 			if status == 20 :
-				print msg
+				print (msg)
 				status = 0
 
 			twist = Twist()
@@ -166,7 +166,7 @@ if __name__=="__main__":
 			rate.sleep()
 
 	except:
-		print e
+		print (e)
 
 	finally:
 		twist = Twist()
