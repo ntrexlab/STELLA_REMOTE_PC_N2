@@ -6,8 +6,6 @@ local_costmap:
   publish_frequency: 10.0
   transform_tolerance: 0.5  
   
-  obstacle_range: 3.0
-  raytrace_range: 3.5
   static_map: false  
   rolling_window: true
   width: 4
